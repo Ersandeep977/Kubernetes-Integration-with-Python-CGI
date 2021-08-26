@@ -1,0 +1,30 @@
+<html>
+
+<h1> hello sandeep welcome to docker world ..</h1>
+
+<script>
+
+ function lw(){
+var  i =  document.getElementById("in1").value
+var xhr = new XMLHttpRequest();
+//xhr.onload
+
+xhr.open("GET","http://192.168.0.110/cgi-bin/s.py?x=" + i ,true);
+xhr.send();
+
+// output from above url
+xhr.onload = function (){
+                var output = xhr.responseText;
+                document.getElementById("d1").innerHTML = output;
+}
+}
+
+</script>
+[root@localhost ~ ] # :<input id="in1" />
+<br />
+<pre>
+<div id="d1">here we have output </div>
+</pre>
+<button onclick="lw()">click</button>
+
+</html>
